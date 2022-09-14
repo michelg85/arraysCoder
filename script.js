@@ -1,47 +1,48 @@
 //Creo la clase de objeto producto como base para cargar los productos 
 class Producto {
-    constructor(nombre, id, precio) {
+    constructor(nombre, id, precio, stock) {
         this.nombre = nombre;
         this.id = id;
         this.precio = precio;
-       
+        this.stock = stock;
+
     }
 }
 
 //Inicializo arrays para las categorias de los productos
-const tabla = [];
-const tonkatsu = [];
+const tablas = [];
+const tonkatsus = [];
 const gyozas = [];
 
-//Cargo los productos segun su categoria
+//Cargo el stock de los productos
 //TABLAS
-tabla.push(new Producto("Tabla Taiko", 1, 2000));
-tabla.push(new Producto("Tabla Taikito", 2, 1400));
-tabla.push(new Producto("Tabla simple", 3, 1200));
-tabla.push(new Producto("Tabla Veggie", 4, 1200));
+tablas.push(new Producto("Tabla Taiko", 1, 2000, 10));
+tablas.push(new Producto("Tabla Taikito", 2, 1400, 8));
+tablas.push(new Producto("Tabla simple", 3, 1200, 12));
+tablas.push(new Producto("Tabla Veggie", 4, 1200, 5));
 //TONKATSU
-tonkatsu.push(new Producto("Tonkatsu Cerdo", 5, 1200));
+tonkatsus.push(new Producto("Tonkatsu Cerdo", 5, 1200, 30));
 //GYOZAS
-gyozas.push(new Producto("Gyozas Taiko", 8, 980));
+gyozas.push(new Producto("Gyozas Taiko", 8, 980, 30));
 
 
 
 //Recorro los arrays para mostrarle los productos al usuario
-for (const tabla of tabla) {
+for (const tabla of tablas) {
     alert("ID (" + tabla.id + ") - " + tabla.nombre);
 }
-for (const tonkatsu of tonkatsu) {
+for (const tonkatsu of tonkatsus) {
     alert("ID (" + tonkatsu.id + ") - " + tonkatsu.nombre);
 }
-for (const gyozas of gyozas) {
-    alert("ID (" + gyozas.id + ") - " + gyozas.nombre);
+for (const gyoza of gyozas) {
+    alert("ID (" + gyoza.id + ") - " + gyoza.nombre);
 }
 
 //Solicito al usuario el ID del producto
 let productoSeleccionado = parseInt(prompt("Ingrese el ID del producto que desea comprar:"));
-const tablaBuscada = tabla.find(tabla => tabla.id === productoSeleccionado);
-const tonkatsuBuscado = tonkatsu.find(tonkatsu => tonkatsu.id == productoSeleccionado);
-const gyozasBuscada = gyozas.find(gyozas => gyozas.id == pruductoSeleccionado);
+const tablaBuscada = tablas.find(tabla => tabla.id === productoSeleccionado);
+const tonkatsuBuscado = tonkatsus.find(tonkatsu => tonkatsu.id == productoSeleccionado);
+const gyozaBuscada = gyozas.find(gyoza => gyoza.id == productoSeleccionado);
 
 if (productoSeleccionado <= 0) {
     alert("Ingresa un ID valido");
@@ -50,7 +51,7 @@ if (productoSeleccionado <= 0) {
 } else if (productoSeleccionado <=7) {
     alert("Seleccionaste " + tonkatsuBuscado.nombre + "\nToca aceptar para agregarlo a tu carrito");
 } else if (productoSeleccionado <= 9) {
-    alert("Seleccionaste " + gyozasBuscada.nombre + "\nToca aceptar para agregarlo a tu carrito");
+    alert("Seleccionaste " + gyozaBuscada.nombre + "\nToca aceptar para agregarlo a tu carrito");
 } else {
     alert("Ingresa un ID valido");
 }
