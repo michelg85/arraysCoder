@@ -23,7 +23,7 @@ tablas.push(new Producto("Tabla Veggie", 4, 1200, 5));
 //TONKATSU
 tonkatsus.push(new Producto("Tonkatsu Cerdo", 5, 1200, 30));
 //GYOZAS
-gyozas.push(new Producto("Gyozas Taiko", 8, 980, 30));
+gyozas.push(new Producto("Gyozas Taiko", 6, 980, 30));
 
 
 
