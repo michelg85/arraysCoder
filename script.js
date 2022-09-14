@@ -46,11 +46,11 @@ const gyozaBuscada = gyozas.find(gyoza => gyoza.id == productoSeleccionado);
 
 if (productoSeleccionado <= 0) {
     alert("Ingresa un ID valido");
-} else if (productoSeleccionado <=4) {
+} else if (productoSeleccionado <=1) {
     alert("Seleccionaste " +  tablaBuscada.nombre + "\nToca aceptar para agregarlo a tu carrito"); 
-} else if (productoSeleccionado <=7) {
+} else if (productoSeleccionado <=5) {
     alert("Seleccionaste " + tonkatsuBuscado.nombre + "\nToca aceptar para agregarlo a tu carrito");
-} else if (productoSeleccionado <= 9) {
+} else if (productoSeleccionado <= 6) {
     alert("Seleccionaste " + gyozaBuscada.nombre + "\nToca aceptar para agregarlo a tu carrito");
 } else {
     alert("Ingresa un ID valido");
